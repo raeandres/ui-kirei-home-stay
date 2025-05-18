@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d4af37">
+  <meta name="description" content="Experience the perfect blend of modern luxury and Japanese minimalist design at Kirei Ito luxury urban retreats.">
+  <title>Kirei Ito | Luxury Urban Retreats</title>
+  <link rel="manifest" href="#manifest">
+  <link rel="apple-touch-icon" href="/api/placeholder/192/192">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #f8f8f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    header {
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+    
+    header.scrolled {
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    
+    header.scrolled .logo {
+      color: #333;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 30px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    
+    header.scrolled nav ul li a {
+      color: #333;
+    }
+    
+    nav ul li a:hover {
+      color: #d4af37;
+    }
+    
+    .hero {
+      height: 100vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/api/placeholder/1920/1080');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
+    }
+    
+    .hero h1 {
+      font-size: 60px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      letter-spacing: 4px;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      background-color: #fff;
+      color: #333;
+    }
+    
+    .section {
+      padding: 100px 10%;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-title h2 {
+      font-size: 36px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      display: inline-block;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background-color: #d4af37;
+    }
+    
+    .rooms {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .room {
+      background-color: #fff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    
+    .room:hover {
+      transform: translateY(-10px);
+    }
+    
+    .room-img {
+      height: 250px;
+      overflow: hidden;
+    }
+    
+    .room-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .room:hover .room-img img {
+      transform: scale(1.1);
+    }
+    
+    .room-info {
+      padding: 25px;
+    }
+    
+    .room-info h3 {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    
+    .room-info p {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    
+    .room-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .price {
+      font-size: 24px;
+      color: #d4af37;
+    }
+    
+    .btn-sm {
+      padding: 8px 20px;
+      background-color: #333;
+      color: #fff;
+      font-size: 12px;
+      border: none;
+    }
+    
+    .btn-sm:hover {
+      background-color: #d4af37;
+    }
+    
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+    
+    .feature {
+      text-align: center;
+    }
+    
+    .feature i {
+      font-size: 40px;
+      color: #d4af37;
+      margin-bottom: 20px;
+    }
+    
+    .feature h3 {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+    
+    .feature p {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .parallax {
+      height: 400px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1920/1080');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
+    }
+    
+    .parallax-content h2 {
+      font-size: 36px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    
+    .gallery-item {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .testimonials {
+      text-align: center;
+    }
+    
+    .testimonial-slider {
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    
+    .testimonial {
+      padding: 20px;
+    }
+    
+    .testimonial p {
+      font-size: 18px;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-author {
+      font-weight: 600;
+    }
+    
+    .testimonial-author span {
+      font-weight: 400;
+      color: #666;
+    }
+    
+    .cta {
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    
+    .cta h2 {
+      font-size: 36px;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+    
+    .cta p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: #666;
+    }
+    
+    .btn-primary {
+      background-color: #d4af37;
+      color: #fff;
+      border: none;
+    }
+    
+    .btn-primary:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 60px 10% 30px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: #d4af37;
+    }
+    
+    .footer-column p {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #aaa;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #aaa;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-column ul li a:hover {
+      color: #d4af37;
+    }
+    
+    .contact-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .contact-info i {
+      margin-right: 10px;
+      color: #d4af37;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 14px;
+      color: #aaa;
+    }
+    
+    /* Offline notification styles */
+    .offline-notification {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 4px;
+      z-index: 1001;
+      display: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .app-install-prompt {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: white;
+      padding: 15px 20px;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      z-index: 1000;
+      display: none;
+    }
+    
+    .app-install-prompt button {
+      background-color: #d4af37;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .app-install-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+      
+      .section {
+        padding: 60px 5%;
+      }
+      
+      header {
+        padding: 15px 20px;
+      }
+      
+      nav ul li {
+        margin-left: 15px;
+      }
+      
+      /* Mobile nav toggle */
+      .mobile-nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1001;
+      }
+      
+      header.scrolled .mobile-nav-toggle {
+        color: #333;
+      }
+      
+      nav ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      
+      nav ul.active {
+        display: flex;
+      }
+      
+      nav ul li {
+        margin: 15px 0;
+      }
+      
+      nav ul li a {
+        font-size: 18px;
+        color: #fff;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .mobile-nav-toggle {
+        display: none;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Kirei Ito</div>
+    <button class="mobile-nav-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav>
+      <ul>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#booking">Book Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Kirei ITO</h1>
+    <p>Experience the perfect blend of modern luxury and Japanese minimalist design in our exclusive urban retreats</p>
+    <a href="#booking" class="btn">Book Your Stay</a>
+  </section>
+
+  <section id="rooms" class="section">
+    <div class="section-title">
+      <h2>Exclusive Accommodations</h2>
+    </div>
+    <div class="rooms">
+      <div class="room">
+        <div class="room-img">
+          <img src="/api/placeholder/400/250" alt="Zen Suite">
+        </div>
+        <div class="room-info">
+          <h3>Zen Suite</h3>
+          <p>Our signature suite featuring Japanese-inspired minimalist design with panoramic city views, custom wood furnishings, and a raised platform living area.</p>
+          <div class="room-price">
+            <div class="price">$320<span>/night</span></div>
+            <a href="#booking" class="btn btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="room">
+        <div class="room-img">
+          <img src="/api/placeholder/400/250" alt="Harmony Room">
+        </div>
+        <div class="room-info">
+          <h3>Harmony Room</h3>
+          <p>A peaceful retreat featuring light wood tones, built-in furnishings, and floor-to-ceiling windows that frame the urban landscape beyond.</p>
+          <div class="room-price">
+            <div class="price">$280<span>/night</span></div>
+            <a href="#booking" class="btn btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="room">
+        <div class="room-img">
+          <img src="/api/placeholder/400/250" alt="Urban Sanctuary">
+        </div>
+        <div class="room-info">
+          <h3>Urban Sanctuary</h3>
+          <p>Elevated living with a custom platform bed, integrated media console, and a perfect balance of dark accent walls and natural wood elements.</p>
+          <div class="room-price">
+            <div class="price">$350<span>/night</span></div>
+            <a href="#booking" class="btn btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="parallax">
+    <div class="parallax-content">
+      <h2>A NEW DIMENSION OF LUXURY</h2>
+      <a href="#booking" class="btn">Experience It Now</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="section-title">
+      <h2>Our Philosophy</h2>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-balance-scale"></i>
+        <h3>Harmonious Design</h3>
+        <p>We believe in the perfect balance between functionality and aesthetic beauty, creating spaces that calm the mind and nurture the soul.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-leaf"></i>
+        <h3>Sustainable Luxury</h3>
+        <p>Our commitment to sustainable practices means we use locally sourced materials and energy-efficient systems throughout our properties.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-city"></i>
+        <h3>Urban Tranquility</h3>
+        <p>Located in the heart of the city, we provide a peaceful sanctuary that offers both convenience and serenity amidst urban life.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-hands"></i>
+        <h3>Personalized Service</h3>
+        <p>Every aspect of your stay is tailored to your preferences, with attentive staff available to ensure your complete comfort and satisfaction.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="amenities" class="section" style="background-color: #f9f9f9;">
+    <div class="section-title">
+      <h2>Premium Amenities</h2>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-utensils"></i>
+        <h3>Gourmet Dining</h3>
+        <p>Experience authentic Japanese-inspired cuisine using fresh, seasonal ingredients in our exclusive restaurant.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-spa"></i>
+        <h3>Wellness Center</h3>
+        <p>Our spa offers traditional treatments and modern therapies designed to restore balance and promote wellbeing.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-concierge-bell"></i>
+        <h3>24/7 Concierge</h3>
+        <p>Our dedicated concierge team is available round-the-clock to fulfill your requests and enhance your stay.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-wifi"></i>
+        <h3>Smart Amenities</h3>
+        <p>Enjoy integrated technology throughout your stay, from high-speed WiFi to smart room controls.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+    <div class="section-title">
+      <h2>Experience Kirei Ito</h2>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Living Area">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Bedroom">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Bathroom">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Dining">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Lobby">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="View">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Restaurant">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Spa">
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonials">
+    <div class="section-title">
+      <h2>Guest Experiences</h2>
+    </div>
+    <div class="testimonial-slider">
+      <div class="testimonial">
+        <p>"The perfect blend of modern luxury and traditional Japanese elements. The attention to detail in every corner of this hotel is remarkable. I particularly loved the raised platform living area and the panoramic city views."</p>
+        <div class="testimonial-author">James Wilson <span>- London, UK</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking" class="section cta">
+    <h2>Reserve Your Urban Retreat</h2>
+    <p>Indulge in the serenity of our Japanese-inspired luxury accommodations. Limited rooms available for your preferred dates.</p>
+    <a href="#" class="btn btn-primary">Check Availability</a>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Kirei Ito</h3>
+        <p>Experience the perfect harmony of modern luxury and Japanese minimalist design in our exclusive urban retreats.</p>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#rooms">Rooms & Suites</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#amenities">Amenities</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#booking">Booking</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <div class="contact-info">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>123 Serenity Boulevard, Skyline Tower, Floor 42</p>
+        </div>
+        <div class="contact-info">
+          <i class="fas fa-phone"></i>
+          <p>+1 (555) 123-4567</p>
+        </div>
+        <div class="contact-info">
+          <i class="fas fa-envelope"></i>
+          <p>info@kireiito.com</p>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Newsletter</h3>
+        <p>Subscribe to receive exclusive offers and updates.</p>
+        <form action="#" method="post">
+          <input type="email" placeholder="Your Email" style="padding:10px; width:100%; margin-bottom:10px;">
+          <button type="submit" class="btn btn-primary" style="width:100%;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kirei Ito Luxury Hotel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="offline-notification">
+    You are currently offline. Some features may be limited.
+  </div>
+  
+  <div class="app-install-prompt">
+    <div>
+      <strong>Install Kirei Ito App</strong>
+      <p>Add to your home screen for a better experience</p>
+    </div>
+    <button id="install-button">Install</button>
+    <button class="app-install-close">&times;</button>
+  </div>
+
+  <script>
+    // Web App Manifest (inline for demonstration)
+    const manifestContent = {
+      "name": "Kirei Ito Luxury Hotel",
+      "short_name": "Kirei Ito",
+      "description": "Experience modern luxury with Japanese minimalist design",
+      "start_url": "/",
+      "display": "standalone",
+      "background_color": "#ffffff",
+      "theme_color": "#d4af37",
+      "icons": [
+        {
+          "src": "/api/placeholder/192/192",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "/api/placeholder/512/512",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
+    };
+    
+    // Create a Blob with the manifest content
+    const blob = new Blob([JSON.stringify(manifestContent)], {type: 'application/json'});
+    const manifestURL = URL.createObjectURL(blob);
+    
+    // Set the manifest link
+    document.querySelector('link[rel="manifest"]').href = manifestURL;
+    
+    // Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registration successful');
+          })
+          .catch(error => {
+            console.log('ServiceWorker registration failed: ', error);
+          });
+      });
+    }
+    
+    // Create a simple service worker inline (for demonstration purposes)
+    const swContent = `
+      const CACHE_NAME = 'kirei-ito-v1';
+      const urlsToCache = [
+        '/',
+        '/index.html',
+        '/styles.css',
+        '/scripts.js',
+        '/api/placeholder/192/192',
+        '/api/placeholder/512/512',
+        '/api/placeholder/400/250',
+        '/api/placeholder/1920/1080',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2'
+      ];
+      
+      self.addEventListener('install', event => {
+        event.waitUntil(
+          caches.open(CACHE_NAME)
+            .then(cache => {
+              return cache.addAll(urlsToCache);
+            })
+        );
+      });
+      
+      self.addEventListener('fetch', event => {
+        event.respondWith(
+          caches.match(event.request)
+            .then(response => {
+              if (response) {
+                return response;
+              }
+              return fetch(event.request)
+                .then(response => {
+                  if (!response || response.status !== 200 || response.type !== 'basic') {
+                    return response;
+                  }
+                  
+                  const responseToCache = response.clone();
+                  
+                  caches.open(CACHE_NAME)
+                    .then(cache => {
+                      cache.put(event.request, responseToCache);
+                    });
+                    
+                  return response;
+                })
+                .catch(() => {
+                  // Return a fallback response for HTML pages
+                  if (event.request.mode === 'navigate') {
+                    return caches.match('/offline.html');
+                  }
+                });
+            })
+        );
+      });
+      
+      // Handle connectivity changes
+      self.addEventListener('message', event => {
+        if (event.data && event.data.type === 'CONNECTIVITY_CHANGE') {
+          const clients = self.clients;
+          clients.matchAll().then(clientList => {
+            clientList.forEach(client => {
+              client.postMessage({
+                type: 'CONNECTIVITY_STATUS',
+                isOnline: event.data.isOnline
+              });
+            });
+          });
+        }
+      });
+    `;
+    
+    // Create a blob URL for the service worker content
+    const swBlob = new Blob([swContent], {type: 'application/javascript'});
+    URL.createObjectURL(swBlob);
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Mobile navigation toggle
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('nav ul');
+    
+    if (mobileNavToggle) {
+      mobileNavToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        const icon = this.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    }<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kirei Ito | Luxury Urban Retreats</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #f8f8f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    header {
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+    
+    header.scrolled {
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    
+    header.scrolled .logo {
+      color: #333;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 30px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    
+    header.scrolled nav ul li a {
+      color: #333;
+    }
+    
+    nav ul li a:hover {
+      color: #d4af37;
+    }
+    
+    .hero {
+      height: 100vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/api/placeholder/1920/1080');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
+    }
+    
+    .hero h1 {
+      font-size: 60px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      letter-spacing: 4px;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      background-color: #fff;
+      color: #333;
+    }
+    
+    .section {
+      padding: 100px 10%;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-title h2 {
+      font-size: 36px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      display: inline-block;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background-color: #d4af37;
+    }
+    
+    .rooms {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .room {
+      background-color: #fff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    
+    .room:hover {
+      transform: translateY(-10px);
+    }
+    
+    .room-img {
+      height: 250px;
+      overflow: hidden;
+    }
+    
+    .room-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .room:hover .room-img img {
+      transform: scale(1.1);
+    }
+    
+    .room-info {
+      padding: 25px;
+    }
+    
+    .room-info h3 {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    
+    .room-info p {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    
+    .room-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .price {
+      font-size: 24px;
+      color: #d4af37;
+    }
+    
+    .btn-sm {
+      padding: 8px 20px;
+      background-color: #333;
+      color: #fff;
+      font-size: 12px;
+      border: none;
+    }
+    
+    .btn-sm:hover {
+      background-color: #d4af37;
+    }
+    
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+    
+    .feature {
+      text-align: center;
+    }
+    
+    .feature i {
+      font-size: 40px;
+      color: #d4af37;
+      margin-bottom: 20px;
+    }
+    
+    .feature h3 {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+    
+    .feature p {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .parallax {
+      height: 400px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1920/1080');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
+    }
+    
+    .parallax-content h2 {
+      font-size: 36px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    
+    .gallery-item {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .testimonials {
+      text-align: center;
+    }
+    
+    .testimonial-slider {
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    
+    .testimonial {
+      padding: 20px;
+    }
+    
+    .testimonial p {
+      font-size: 18px;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-author {
+      font-weight: 600;
+    }
+    
+    .testimonial-author span {
+      font-weight: 400;
+      color: #666;
+    }
+    
+    .cta {
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    
+    .cta h2 {
+      font-size: 36px;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+    
+    .cta p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: #666;
+    }
+    
+    .btn-primary {
+      background-color: #d4af37;
+      color: #fff;
+      border: none;
+    }
+    
+    .btn-primary:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 60px 10% 30px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: #d4af37;
+    }
+    
+    .footer-column p {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #aaa;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #aaa;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-column ul li a:hover {
+      color: #d4af37;
+    }
+    
+    .contact-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .contact-info i {
+      margin-right: 10px;
+      color: #d4af37;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 14px;
+      color: #aaa;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+      
+      .section {
+        padding: 60px 5%;
+      }
+      
+      header {
+        padding: 15px 20px;
+      }
+      
+      nav ul li {
+        margin-left: 15px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Serenity Heights</div>
+    <nav>
+      <ul>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#booking">Book Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Kirei ITO</h1>
+    <p>Experience the perfect blend of modern luxury and Japanese minimalist design in our exclusive urban retreats</p>
+    <a href="#booking" class="btn">Book Your Stay</a>
+  </section>
+
+  <section id="rooms" class="section">
+    <div class="section-title">
+      <h2>Exclusive Accommodations</h2>
+    </div>
+    <div class="rooms">
+      <div class="room">
+        <div class="room-img">
+          <img src="/api/placeholder/400/250" alt="Zen Suite">
+        </div>
+        <div class="room-info">
+          <h3>Zen Suite</h3>
+          <p>Our signature suite featuring Japanese-inspired minimalist design with panoramic city views, custom wood furnishings, and a raised platform living area.</p>
+          <div class="room-price">
+            <div class="price">$320<span>/night</span></div>
+            <a href="#booking" class="btn btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="room">
+        <div class="room-img">
+          <img src="/api/placeholder/400/250" alt="Harmony Room">
+        </div>
+        <div class="room-info">
+          <h3>Harmony Room</h3>
+          <p>A peaceful retreat featuring light wood tones, built-in furnishings, and floor-to-ceiling windows that frame the urban landscape beyond.</p>
+          <div class="room-price">
+            <div class="price">$280<span>/night</span></div>
+            <a href="#booking" class="btn btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="room">
+        <div class="room-img">
+          <img src="/api/placeholder/400/250" alt="Urban Sanctuary">
+        </div>
+        <div class="room-info">
+          <h3>Urban Sanctuary</h3>
+          <p>Elevated living with a custom platform bed, integrated media console, and a perfect balance of dark accent walls and natural wood elements.</p>
+          <div class="room-price">
+            <div class="price">$350<span>/night</span></div>
+            <a href="#booking" class="btn btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="parallax">
+    <div class="parallax-content">
+      <h2>A NEW DIMENSION OF LUXURY</h2>
+      <a href="#booking" class="btn">Experience It Now</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="section-title">
+      <h2>Our Philosophy</h2>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-balance-scale"></i>
+        <h3>Harmonious Design</h3>
+        <p>We believe in the perfect balance between functionality and aesthetic beauty, creating spaces that calm the mind and nurture the soul.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-leaf"></i>
+        <h3>Sustainable Luxury</h3>
+        <p>Our commitment to sustainable practices means we use locally sourced materials and energy-efficient systems throughout our properties.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-city"></i>
+        <h3>Urban Tranquility</h3>
+        <p>Located in the heart of the city, we provide a peaceful sanctuary that offers both convenience and serenity amidst urban life.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-hands"></i>
+        <h3>Personalized Service</h3>
+        <p>Every aspect of your stay is tailored to your preferences, with attentive staff available to ensure your complete comfort and satisfaction.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="amenities" class="section" style="background-color: #f9f9f9;">
+    <div class="section-title">
+      <h2>Premium Amenities</h2>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-utensils"></i>
+        <h3>Gourmet Dining</h3>
+        <p>Experience authentic Japanese-inspired cuisine using fresh, seasonal ingredients in our exclusive restaurant.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-spa"></i>
+        <h3>Wellness Center</h3>
+        <p>Our spa offers traditional treatments and modern therapies designed to restore balance and promote wellbeing.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-concierge-bell"></i>
+        <h3>24/7 Concierge</h3>
+        <p>Our dedicated concierge team is available round-the-clock to fulfill your requests and enhance your stay.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-wifi"></i>
+        <h3>Smart Amenities</h3>
+        <p>Enjoy integrated technology throughout your stay, from high-speed WiFi to smart room controls.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+    <div class="section-title">
+      <h2>Experience Serenity Heights</h2>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Living Area">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Bedroom">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Bathroom">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Dining">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Lobby">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="View">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Restaurant">
+      </div>
+      <div class="gallery-item">
+        <img src="/api/placeholder/400/250" alt="Spa">
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonials">
+    <div class="section-title">
+      <h2>Guest Experiences</h2>
+    </div>
+    <div class="testimonial-slider">
+      <div class="testimonial">
+        <p>"The perfect blend of modern luxury and traditional Japanese elements. The attention to detail in every corner of this hotel is remarkable. I particularly loved the raised platform living area and the panoramic city views."</p>
+        <div class="testimonial-author">James Wilson <span>- London, UK</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking" class="section cta">
+    <h2>Reserve Your Urban Retreat</h2>
+    <p>Indulge in the serenity of our Japanese-inspired luxury accommodations. Limited rooms available for your preferred dates.</p>
+    <a href="#" class="btn btn-primary">Check Availability</a>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Serenity Heights</h3>
+        <p>Experience the perfect harmony of modern luxury and Japanese minimalist design in our exclusive urban retreats.</p>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#rooms">Rooms & Suites</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#amenities">Amenities</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#booking">Booking</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <div class="contact-info">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>123 Serenity Boulevard, Skyline Tower, Floor 42</p>
+        </div>
+        <div class="contact-info">
+          <i class="fas fa-phone"></i>
+          <p>+1 (555) 123-4567</p>
+        </div>
+        <div class="contact-info">
+          <i class="fas fa-envelope"></i>
+          <p>info@serenityheights.com</p>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Newsletter</h3>
+        <p>Subscribe to receive exclusive offers and updates.</p>
+        <form action="#" method="post">
+          <input type="email" placeholder="Your Email" style="padding:10px; width:100%; margin-bottom:10px;">
+          <button type="submit" class="btn btn-primary" style="width:100%;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kirei Ito Luxury Hotel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
